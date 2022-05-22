@@ -3,7 +3,7 @@ https://www.edureka.co/blog/interview-questions/java-interview-questions/
 **1. Explain JDK, JRE and JVM?**  
 **_JDK vs JRE vs JVM_**  
 JDK:  
-It stands for Java Development Kit. It stands for Java Runtime Environment. It stands for Java Virtual Machine.  
+The Java Development Kit (JDK) is a cross-platformed software development environment that offers a collection of tools and libraries necessary for developing Java-based software applications and applets. It is a core package used in Java, along with the JVM (Java Virtual Machine) and the JRE (Java Runtime Environment).  
 JRE:  
 It is the tool necessary to compile, document and package Java programs. JRE refers to a runtime environment in which Java bytecode can be executed. It is an abstract machine. It is a specification that provides a run-time environment in which Java bytecode can be executed.  
 JVM:  
@@ -21,7 +21,6 @@ main() in Java is the entry point for any Java program. It is always written as 
 Java is called platform independent because of its byte codes which can run on any system irrespective of its underlying operating system.
 
 **_4. Why Java is not 100% Object-oriented?_**
-
 Java is not 100% Object-oriented because it makes use of eight primitive data types such as boolean, byte, char, int, float, double, long, short which are not objects.
 
 **_5. What are wrapper classes in Java?_**  
@@ -59,7 +58,6 @@ Equals() method is defined in Object class in Java and used for checking equalit
 In Java, the super keyword is a reference variable that refers to an immediate parent class object.
 When you create a subclass instance, you’re also creating an instance of the parent class, which is referenced to by the super reference variable.
 The uses of the Java super Keyword are-
-
 1. To refer to an immediate parent class instance variable, use super.
 2. The keyword super can be used to call the method of an immediate parent class.
 3. Super() can be used to call the constructor of the immediate parent class.
@@ -108,7 +106,6 @@ JIT stands for Just-In-Time compiler in Java. It is a program that helps in conv
 
 **_17. What are access modifiers in Java?_**
 In Java, access modifiers are special keywords which are used to restrict the access of a class, constructor, data member and method in another class. Java supports four types of access modifiers:
-
 1. Default
 2. Private
 3. Protected
@@ -163,17 +160,20 @@ When we create a string using new(), a new object is created. Whereas, if we cre
 
 **_26. What is the difference between a local variable and an instance variable?_**  
 In Java, a local variable is typically used inside a method, constructor, or a block and has only local scope. Thus, this variable can be used only within the scope of a block. The best benefit of having a local variable is that other methods in the class won’t be even aware of that variable.
-Example
+Example:
+```
 if(x > 100)
 {
-String test = "Edureka";
+   String test = "Edureka";
 }
+```
 Whereas, an instance variable in Java, is a variable which is bounded to its object itself. These variables are declared within a class, but outside a method. Every object of that class will create it’s own copy of the variable while using it. Thus, any changes made to the variable won’t reflect in any other instances of that class and will be bound to that particular instance only.
+```
 class Test{
-public String EmpName;
-public int empAge;
+   public String EmpName;
+   public int empAge;
 }
-
+```
 **_27. Differentiate between the constructors and methods in Java?_**
 Methods Constructors 12. Used to represent the behavior of an object 1. Used to initialize the state of an object 13. Must have a return type 2. Do not have any return type 14. Needs to be invoked explicitly 3. Is invoked implicitly 15. No default method is provided by the compiler 4. A default constructor is provided by the compiler if the class has none 16. Method name may or may not be same as class name 5. Constructor name must always be the same as the class name
 In case you are facing any challenges with these Java interview questions, please comment on your problems in the section below.
@@ -216,6 +216,7 @@ for (int i = 0; i < 5; i++){
 **_30. What is an infinite loop in Java? Explain with an example._**  
 An infinite loop is an instruction sequence in Java that loops endlessly when a functional exit isn’t met. This type of loop can be the result of a programming error or may also be a deliberate action based on the application behavior. An infinite loop will terminate automatically once the application exits.
 For example:
+```
 public class InfiniteForLoopDemo
 {
 public static void main(String[] arg) {
@@ -224,11 +225,11 @@ System.out.println("Welcome to Edureka!");
 // To terminate this program press ctrl + c in the console.
 }
 }
+```
 
 **_31. What is the difference between this() and super() in Java?_**  
 In Java, super() and this(), both are special keywords that are used to call the constructor.
 this() super()
-
 1. this() represents the current instance of a class 1. super() represents the current instance of a parent/base class
 2. Used to call the default constructor of the same class 2. Used to call the default constructor of the parent/base class
 3. Used to access methods of the current class 3. Used to access methods of the base class
@@ -239,23 +240,19 @@ this() super()
 
 **_33. Differentiate between static and non-static methods in Java._**  
 Static Method Non-Static Method
-
 1. The static keyword must be used before the method name 1. No need to use the static keyword before the method name
 2. It is called using the class (className.methodName) 2. It is can be called like any general method
 3. They can’t access any non-static instance variables or methods 3. It can access any static method and any static variable without creating an instance of the class
 
 **_34. Why is synchronization necessary? Explain with the help of a relevant example._**  
 Java allows multiple threads to execute. They may be accessing the sanme variable or object. Synchronization helps to execute threads one after another.
-
 It is important as it helps to execute all concurrent threads while being in sync. It prevents memory consistency errors due to access to shared memory. An example of synchronization code is-
-
 ```
 public synchronized void increment()
 {
    a++;
 }
 ```
-
 As we have synchronized this function, this thread can only use the object after the previous thread has used it.
 
 **_35. Explain the term “Double Brace Initialisation” in Java?_**  
@@ -268,7 +265,6 @@ The reason for this is historical. One of Java’s original goals was to conside
 
 **_37. What is constructor chaining in Java?_**  
 In Java, constructor chaining is the process of calling one constructor from another with respect to the current object. Constructor chaining is possible only through legacy where a subclass constructor is responsible for invoking the superclass’ constructor first. There could be any number of classes in the constructor chain. Constructor chaining can be achieved in two ways:
-
 1. Within the same class using this()
 2. From base class using super()
 
