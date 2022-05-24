@@ -1,5 +1,3 @@
-https://www.edureka.co/blog/interview-questions/java-interview-questions/
-
 **1. Explain JDK, JRE and JVM?**  
 **_JDK vs JRE vs JVM_**  
 JDK:  
@@ -305,3 +303,6 @@ https://www.geeksforgeeks.org/g-fact-31-java-is-strictly-pass-by-value/
 https://www.javatpoint.com/call-by-value-and-call-by-reference-in-java
 Java is Strictly Pass by Value. We pass an int to the function “change()” and as a result the change in the value of that integer is not reflected in the main method. Like C/C++, Java creates a copy of the variable being passed in the method and then do the manipulations. Hence the change is not reflected in the main method.
 Java and C is always call by value. The term call by reference strictly applies to C++ where we use the & operator in the formal argument. In case of object references the references are copied from the actual to the formal argument.
+
+_Resource:_
+https://www.edureka.co/blog/interview-questions/java-interview-questions/

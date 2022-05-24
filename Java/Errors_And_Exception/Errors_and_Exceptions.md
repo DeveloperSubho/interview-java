@@ -197,3 +197,9 @@ Methods are defined in the base class Throwable. Some of the important methods o
    • Parallel Garbage Collector
    • CMS Garbage Collector
    • G1 Garbage Collector
+
+
+https://www.baeldung.com/java-exceptions-interview-questions
+https://javaconceptoftheday.com/java-exception-handling-interview-questions-and-answers/
+https://www.journaldev.com/2167/java-exception-interview-questions-and-answers
+https://www.scientecheasy.com/2020/09/exception-handling-interview-questions.html/

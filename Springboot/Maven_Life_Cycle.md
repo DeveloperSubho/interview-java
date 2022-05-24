@@ -1,4 +1,4 @@
-** What is Maven?**  
+**What is Maven?**  
 Maven is a powerful project management tool that is based on POM (project object model), used for projects build, dependency and documentation. It is a tool that can be used for building and managing any Java-based project. Maven makes the day-to-day work of Java developers easier and helps with the building and running of any Java-based project.
 
 Maven Lifecycle: Below is a representation of the default Maven lifecycle and its 8 steps: Validate, Compile, Test, Package, Integration test, Verify, Install and Deploy.
@@ -21,23 +21,23 @@ A Maven phase represents a stage in the Maven build lifecycle. Each phase is res
 
 Here are some of the most important phases in the default build lifecycle:
 
-validate: check if all information necessary for the build is available
-compile: compile the source code
-test-compile: compile the test source code
-test: run unit tests
-package: package compiled source code into the distributable format (jar, war, …)
-integration-test: process and deploy the package if needed to run integration tests
-install: install the package to a local repository
-deploy: copy the package to the remote repository
+* validate: check if all information necessary for the build is available
+* compile: compile the source code
+* test-compile: compile the test source code
+* test: run unit tests
+* package: package compiled source code into the distributable format (jar, war, …)
+* integration-test: process and deploy the package if needed to run integration tests
+* install: install the package to a local repository
+* deploy: copy the package to the remote repository
 
 Phases are executed in a specific order. This means that if we run a specific phase using the command:
 
-mvn <PHASE>
+**mvn <PHASE>**
 This won't only execute the specified phase but all the preceding phases as well.
 
 For example, if we run the deploy phase – which is the last phase in the default build lifecycle – that will execute all phases before the deploy phase as well, which is the entire default lifecycle:
 
-mvn deploy
+**mvn deploy**
 
 ![Maven Life Cycle](/Screenshots/Maven-Life-Cycle-2.png)
 ![Maven Life Cycle](/Screenshots/Maven-Life-Cycle-3.png)
@@ -62,28 +62,29 @@ When we run a phase – all goals bound to this phase are executed in order.
 
 Here are some of the phases and default goals bound to them:
 
-compiler:compile – the compile goal from the compiler plugin is bound to the compile phase
-compiler:testCompile is bound to the test-compile phase
-surefire:test is bound to test phase
-install:install is bound to install phase
-jar:jar and war:war is bound to package phase
+* compiler:compile – the compile goal from the compiler plugin is bound to the compile phase
+* compiler:testCompile is bound to the test-compile phase
+* surefire:test is bound to test phase
+* install:install is bound to install phase
+* jar:jar and war:war is bound to package phase
+
 We can list all goals bound to a specific phase and their plugins using the command:
 
-mvn help:describe -Dcmd=PHASENAME
+* mvn help:describe -Dcmd=PHASENAME
 For example, to list all goals bound to the compile phase, we can run:
 
-mvn help:describe -Dcmd=compile
+* mvn help:describe -Dcmd=compile
 And get the sample output:
 
 compile' is a phase corresponding to this plugin:
 org.apache.maven.plugins:maven-compiler-plugin:3.1:compile
 Which, as mentioned above, means the compile goal from compiler plugin is bound to the compile phase.
 
-Maven Plugin
+**Maven Plugin**
 A Maven plugin is a group of goals. However, these goals aren't necessarily all bound to the same phase.
 
 For example, here's a simple configuration of the Maven Failsafe plugin which is responsible for running integration tests:
-
+```
 <build>
     <plugins>
         <plugin>
@@ -100,65 +101,67 @@ For example, here's a simple configuration of the Maven Failsafe plugin which is
         </plugin>
     </plugins>
 </build>
+```
 As we can see, the Failsafe plugin has two main goals configured here:
 
-integration-test: run integration tests
-verify: verify all integration tests passed
+* integration-test: run integration tests
+* verify: verify all integration tests passed
+
 We can use the following command to list all goals in a specific plugin:
 
-mvn <PLUGIN>:help
+**mvn <PLUGIN>:help**
 For example, to list all goals in the Failsafe plugin:
 
-mvn failsafe:help
+**mvn failsafe:help**
 And the output of this will be:
 
 This plugin has 3 goals:
 
-failsafe:help
+**failsafe:help**
 Display help information on maven-failsafe-plugin.
 Call mvn failsafe:help -Ddetail=true -Dgoal=<goal-name> to display parameter
 details.
 
-failsafe:integration-test
+**failsafe:integration-test**
 Run integration tests using Surefire.
 
-failsafe:verify
+**failsafe:verify**
 Verify integration tests ran using Surefire.
 To run a specific goal, without executing its entire phase (and the preceding phases) we can use the command:
 
-mvn <PLUGIN>:<GOAL>
+**mvn <PLUGIN>:<GOAL>**
 For example, to run integration-test goal from Failsafe plugin, we need to run:
 
-mvn failsafe:integration-test
+**mvn failsafe:integration-test**
 
 Building a Maven Project
 To build a Maven project, we need to execute one of the life cycles by running one of their phases:
 
-mvn deploy
+**mvn deploy**
 This will execute the entire default lifecycle. Alternatively, we can stop at the install phase:
 
-mvn install
+**mvn install**
 But usually we'll use the command:
 
-mvn clean install
+**mvn clean install**
 To clean the project first – by running the clean lifecycle – before the new build.
 
 We can also run only a specific goal of the plugin:
 
-mvn compiler:compile
+**mvn compiler:compile**
 Note that if we tried to build a Maven project without specifying a phase or a goal, that will cause the error:
 
 [ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal
 
-Maven Commands:
+_Maven Commands:_
 
-    mvn clean: Cleans the project and removes all files generated by the previous build.
-    mvn compile: Compiles source code of the project.
-    mvn test-compile: Compiles the test source code.
-    mvn test: Runs tests for the project.
-    mvn package: Creates JAR or WAR file for the project to convert it into a distributable format.
-    mvn install: Deploys the packaged JAR/ WAR file to the local repository.
-    mvn deploy: Copies the packaged JAR/ WAR file to the remote repository after compiling, running tests and building the project.
+* mvn clean: Cleans the project and removes all files generated by the previous build.
+* mvn compile: Compiles source code of the project.
+* mvn test-compile: Compiles the test source code.
+* mvn test: Runs tests for the project.
+* mvn package: Creates JAR or WAR file for the project to convert it into a distributable format.
+* mvn install: Deploys the packaged JAR/ WAR file to the local repository.
+* mvn deploy: Copies the packaged JAR/ WAR file to the remote repository after compiling, running tests and building the project.
 
 Generally when we run any of the above commands, we add the mvn clean step so that the target folder generated from the previous build is removed before running a newer build. This is how the command would look on integrating the clean step with install phase: mvn clean install
 

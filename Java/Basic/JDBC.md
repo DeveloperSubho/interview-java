@@ -47,3 +47,10 @@ JDBC supports 3 types of statements:
 1. Statement: Used for general purpose access to the database and executes a static SQL query at runtime.
 2. PreparedStatement: Used to provide input parameters to the query during execution.
 3. CallableStatement: Used to access the database stored procedures and helps in accepting runtime parameters.
+
+
+Resources:
+https://www.javatpoint.com/jdbc-interview-questions
+https://www.interviewbit.com/jdbc-interview-questions/
+https://www.softwaretestinghelp.com/jdbc-interview-questions/
+https://career.guru99.com/top-50-jdbc-interview-questions-and-answers/
