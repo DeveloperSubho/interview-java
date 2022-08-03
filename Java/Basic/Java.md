@@ -15,12 +15,14 @@ An interface defines a protocol of behaviour and not how it should be implemente
 Interface variables are static because java interfaces cannot be instantiated on their own. The value of the variable must be assigned in a static context in which no instance exists.
 The final modifier ensures the value assigned to the interface variable is a true constant that cannot be re-assigned. In other words, interfaces can declare only constants, not instance variables.
 Template :
+```
 interface interfaceName{
     // Any number of final, static variables
     datatype variableName = value;
     // Any number of abstract method declarations
     returntype methodName(list of parameters or no parameters);
 }
+```
 
 **3. What differences exist between HashMap and Hashtable?**
 There are several differences between HashMap and Hashtable in Java:
@@ -83,8 +85,8 @@ The transient keyword in Java is used to indicate that a field should not be par
 
 **15. What is static initializer?**
 The static initializer is a static {} block of code inside java class, and run only one time before the constructor or main method is called. If you had to perform a complicated calculation to determine the value of x — or if its value comes from a database — a static initializer could be very useful.
-
 Consider:
+```
 class StaticInit {
     public static int x;
     static {
@@ -93,6 +95,7 @@ class StaticInit {
     // other class members such as constructors and
     // methods go here...
 }
+```
 
 **16. What do the ... dots in the method parameters mean?**
 That feature is called varargs, and it's a feature introduced in Java 5. It means that function can receive multiple String arguments:
@@ -127,10 +130,12 @@ ArrayList<E>, on the other hand, allow fast random read access, so you can grab 
 **19. What is Double Brace initialization in Java?**
 
 Double brace initialisation creates an anonymous class derived from the specified class (the outer braces), and provides an initialiser block within that class (the inner braces). e.g.
+```
 new ArrayList<Integer>() {{
     add(1);
     add(2);
 }};
+```
 However, I'm not too fond of that method because what you end up with is a subclass of ArrayList which has an instance initializer, and that class is created just to create one object -- that just seems like a little bit overkill to me.
 
 **20. What exactly is marker interface in Java?**
