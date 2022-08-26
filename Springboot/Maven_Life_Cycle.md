@@ -21,14 +21,14 @@ A Maven phase represents a stage in the Maven build lifecycle. Each phase is res
 
 Here are some of the most important phases in the default build lifecycle:
 
-* validate: check if all information necessary for the build is available
-* compile: compile the source code
-* test-compile: compile the test source code
-* test: run unit tests
-* package: package compiled source code into the distributable format (jar, war, …)
-* integration-test: process and deploy the package if needed to run integration tests
-* install: install the package to a local repository
-* deploy: copy the package to the remote repository
+* _validate:_ check if all information necessary for the build is available
+* _compile:_ compile the source code
+* _test-compile:_ compile the test source code
+* _test:_ run unit tests
+* _package:_ package compiled source code into the distributable format (jar, war, …)
+* _integration-test:_ process and deploy the package if needed to run integration tests
+* _install:_ install the package to a local repository
+* _deploy:_ copy the package to the remote repository
 
 Phases are executed in a specific order. This means that if we run a specific phase using the command:
 
