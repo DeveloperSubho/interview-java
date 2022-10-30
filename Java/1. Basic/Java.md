@@ -15,6 +15,7 @@ An interface defines a protocol of behaviour and not how it should be implemente
 Interface variables are static because java interfaces cannot be instantiated on their own. The value of the variable must be assigned in a static context in which no instance exists.
 The final modifier ensures the value assigned to the interface variable is a true constant that cannot be re-assigned. In other words, interfaces can declare only constants, not instance variables.
 Template :
+
 ```
 interface interfaceName{
     // Any number of final, static variables
@@ -59,7 +60,6 @@ Iterators in java are used to iterate over the Collection objects.Fail-Fast iter
 Fail-Safe iterators don’t throw any exceptions if a collection is structurally modified while iterating over it. This is because, they operate on the clone of the collection, not on the original collection and that’s why they are called fail-safe iterators. Iterator on CopyOnWriteArrayList, ConcurrentHashMap classes are examples of fail-safe Iterator.
 If you remove an element via Iterator remove() method, exception will not be thrown. However, in case of removing via a particular collection remove() method, ConcurrentModificationException will be thrown.
 
-
 **9. What is the tradeoff between using an unordered array versus an ordered array?**
 The major advantage of an ordered array is that the search times have time complexity of O(log n) by using Binary Search, compared to that of an unordered array, which is O (n). The disadvantage of an ordered array is that the insertion operation has a time complexity of O(n), because the elements with higher values must be moved to make room for the new element. Instead, the insertion operation for an unordered array takes constant time of O(1).
 
@@ -73,7 +73,9 @@ There exists one and only one heap for a running JVM process.
 The throw keyword is used to explicitly raise a exception within the program. On the contrary, the throws clause is used to indicate those exceptions that are not handled by a method. Each method must explicitly specify which exceptions does not handle, so the callers of that method can guard against possible exceptions. Finally, multiple exceptions are separated by a comma.
 
 **12. What are the differences between == and equals?**
-== never throws NullPointerException, == is subject to type compatibility check at compile time
+The major difference between the == operator and .equals() method is that one is an operator, and the other is the method. Both these == operators and equals() are used to compare objects to mark equality.
+== is an operator that compares the memory or reference location of an object in the heap.
+.equal() is a method that compares the actual content of the object.
 
 **13. What is the main difference between StringBuffer and StringBuilder?**
 StringBuffer is synchronized, StringBuilder is not. When some thing is synchronized, then multiple threads can access, and modify it with out any problem or side effect. StringBuffer is synchronized, so you can use it with multiple threads with out any problem.
@@ -86,6 +88,7 @@ The transient keyword in Java is used to indicate that a field should not be par
 **15. What is static initializer?**
 The static initializer is a static {} block of code inside java class, and run only one time before the constructor or main method is called. If you had to perform a complicated calculation to determine the value of x — or if its value comes from a database — a static initializer could be very useful.
 Consider:
+
 ```
 class StaticInit {
     public static int x;
@@ -105,14 +108,15 @@ myMethod(new String[]{"foo", "var", "baz"}); // you can eve
 
 Then, you can use the String var as an array:
 public void myMethod(String... strings){
-    for(String whatever : strings){
-        // do what ever you want
-    }
+for(String whatever : strings){
+// do what ever you want
+}
 
     // the code above is is equivalent to
     for( int i = 0; i < strings.length; i++){
         // classical for. In this case you use strings[i]
     }
+
 }
 
 **17. Why is char[] preferred over String for passwords?**
@@ -130,12 +134,14 @@ ArrayList<E>, on the other hand, allow fast random read access, so you can grab 
 **19. What is Double Brace initialization in Java?**
 
 Double brace initialisation creates an anonymous class derived from the specified class (the outer braces), and provides an initialiser block within that class (the inner braces). e.g.
+
 ```
 new ArrayList<Integer>() {{
     add(1);
     add(2);
 }};
 ```
+
 However, I'm not too fond of that method because what you end up with is a subclass of ArrayList which has an instance initializer, and that class is created just to create one object -- that just seems like a little bit overkill to me.
 
 **20. What exactly is marker interface in Java?**
@@ -180,3 +186,55 @@ Declaring a variable as volatile (be it static or not) states that the variable 
 **44. Super and this keyword in Java?**
 **45. Java is a call by Value or reference?**
 
+**46. What is callback?**
+Callback is a piece of executable code that is passed as an argument to other code, which is expected to call back (execute) the argument at some convenient time.
+#Explanation
+Real world example
+We need to be notified after executing task has finished. We pass a callback method for the executor and wait for it to call back on us.
+In plain words
+Callback is a method passed to the executor which will be called at defined moment.
+In the case of Event-driven programming, we pass a reference to a function which will get called when an event occurs. This mechanism is termed as a callback. Java does not support function pointers. So we can not implement the same direction. But using interfaces we can achieve the same very easily.
+
+```
+//Step 1: Create an interface for the callback method
+interface ClickEventHandler {
+   public void handleClick();
+}
+
+//Step 2: Create a callback handler
+//implementing the above interface
+class ClickHandler implements ClickEventHandler {
+   public void handleClick() {
+      System.out.println("Clicked");
+   }
+}
+
+//Step 3: Create event generator class
+class Button {
+   public void onClick(ClickEventHandler clickHandler) {
+      clickHandler.handleClick();
+   }
+}
+
+public class Tester {
+   public static void main(String[] args) {
+      Button button = new Button();
+      ClickHandler clickHandler = new ClickHandler();
+      //pass the clickHandler to do the default operation
+      button.onClick(clickHandler);
+
+      Button button1 = new Button();
+      //pass the interface to implement own operation
+      button1.onClick(new ClickEventHandler() {
+         @Override
+         public void handleClick() {
+            System.out.println("Button Clicked");
+         }
+      });
+   }
+}
+```
+
+Output
+Clicked Button
+Clicked
