@@ -1,12 +1,12 @@
-Time Complexity
+T**ime Complexity**
 Usually, when we talk about time complexity, we refer to Big-O notation. Simply put, the notation describes how the time to perform the algorithm grows with the input size.
 
-List
+**List**
 Let's start with a simple list, which is an ordered collection.
 
 Here we'll look at a performance overview of the ArrayList, LinkedList, and CopyOnWriteArrayList implementations.
 
-3.1. ArrayList
+**_3.1. ArrayList_**
 The ArrayList in Java is backed by an array. This helps to understand the internal logic of its implementation. A more comprehensive guide for the ArrayList is available in this article.
 
 So let's focus first on the time complexity of the common operations at a high level:
@@ -18,7 +18,7 @@ remove() – runs in linear O(n) time. We have to iterate the entire array to fi
 indexOf() – also runs in linear time. It iterates through the internal array and checks each element one by one, so the time complexity for this operation always requires O(n) time.
 contains() – implementation is based on indexOf(), so it'll also run in O(n) time.
 
-3.2. CopyOnWriteArrayList 
+**3.2. CopyOnWriteArrayList**
 This implementation of the List interface is beneficial when working with multi-threaded applications. It's thread-safe and explained well in this guide here.
 
 Here's the Big-O notation performance overview for CopyOnWriteArrayList:
@@ -28,7 +28,7 @@ remove() – takes O(n) time
 contains() – likewise, the complexity is O(n)
 As we can see, using this collection is very expensive because of the performance characteristics of the add() method.
 
-3.3. LinkedList
+**3.3. LinkedList**
 LinkedList is a linear data structure that consists of nodes holding a data field and a reference to another node. For more LinkedList features and capabilities, have a look at this article here.
 
 Let's present the average estimate of time we need to perform some basic operations:
@@ -41,16 +41,16 @@ remove(index) – to remove an element by index, we first need to follow the lin
 contains() – also has O(n) time complexity
 
 4. Map
-With the latest JDK versions, we're witnessing significant performance improvement for Map implementations, such as replacing the LinkedList with the balanced tree node structure in HashMap, and LinkedHashMap internal implementations. This shortens the element lookup worst-case scenario from O(n) to O(log(n)) time during the HashMap collisions.
+   With the latest JDK versions, we're witnessing significant performance improvement for Map implementations, such as replacing the LinkedList with the balanced tree node structure in HashMap, and LinkedHashMap internal implementations. This shortens the element lookup worst-case scenario from O(n) to O(log(n)) time during the HashMap collisions.
 
 However, if we implement proper .equals() and .hashcode() methods, collisions are unlikely.
 
 Storing and retrieving elements from the HashMap takes constant O(1) time.
 
-4.2. Testing O(log(n)) Operations
+**_4.2. Testing O(log(n)) Operations_**
 For the tree structure TreeMap and ConcurrentSkipListMap, the put(), get(), remove(), and containsKey() operations time is O(log(n)).
 
-5. Set
+**5. Set**
 Generally, Set is a collection of unique elements. Here we're going to examine the HashSet, LinkedHashSet, EnumSet, TreeSet, CopyOnWriteArraySet, and ConcurrentSkipListSet implementations of the Set interface.
 
 To better understand the internals of the HashSet, this guide is here to help.
@@ -95,7 +95,7 @@ Remove by index: To remove by index, ArrayList find that index using random acce
 
 ![\List-Time-Complexity](/Screenshots/List-Time-Complexity.png)
 
-Set
+**Set**
 
 HashSet, LinkedHashSet and TreeSet
 time
@@ -108,7 +108,7 @@ Linkedhashset is between hashset and treeset. it is implemented as a hash table 
 
 ![\Set-Time-Complexity](/Screenshots/Set-Time-Complexity.png)
 
-Queue
+**Queue**
 
 Priority Deque
 
@@ -126,7 +126,7 @@ In a doubly-linked list implementation and assuming no allocation/deallocation o
 
 ![\Queue-Time-Complexity](/Screenshots/Queue-Time-Complexity.png)
 
-Map
+**Map**
 
 LinkedHashMap
 time
@@ -153,6 +153,6 @@ next() — fetching each element takes O(log n) time.
 
 ![\Map-Time-Complexity](/Screenshots/Map-Time-Complexity.png)
 
-Reference: 
+Reference:
 https://www.baeldung.com/java-collections-complexity
 https://yogeshkkhichi.medium.com/time-and-space-complexity-of-collections-5a00c7b1d32b
