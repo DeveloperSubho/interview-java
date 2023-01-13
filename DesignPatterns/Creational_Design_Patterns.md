@@ -7,17 +7,17 @@ Creational Design Patterns address this issue by decoupling the client entirely 
 
 In this article, we'll discuss four types of Creational Design Pattern:
 
-Singleton – Ensures that at most only one instance of an object exists throughout application
-Factory Method – Creates objects of several related classes without specifying the exact object to be created
-Abstract Factory – Creates families of related dependent objects
-Builder – Constructs complex objects using step-by-step approach
+**_Singleton_** – Ensures that at most only one instance of an object exists throughout application
+**_Factory Method_** – Creates objects of several related classes without specifying the exact object to be created
+**_Abstract Factory_** – Creates families of related dependent objects
+**_Builder_** – Constructs complex objects using step-by-step approach
 
-Singleton Design Pattern
+**Singleton Design Pattern**
 The Singleton Design Pattern aims to keep a check on initialization of objects of a particular class by ensuring that only one instance of the object exists throughout the Java Virtual Machine.
 
 A Singleton class also provides one unique global access point to the object so that each subsequent call to the access point returns only that particular object.
 
-**Singleton Pattern Example**
+**_Singleton Pattern Example_**
 Although the Singleton pattern was introduced by GoF, the original implementation is known to be problematic in multithreaded scenarios.
 
 So here, we're going to follow a more optimal approach that makes use of a static inner class:
@@ -90,7 +90,7 @@ In the previous section, we saw how the Factory Method design pattern could be u
 
 By contrast, the Abstract Factory Design Pattern is used to create families of related or dependent objects. It's also sometimes called a factory of factories.
 
-Builder Design Pattern
+**Builder Design Pattern**
 The Builder Design Pattern is another creational pattern designed to deal with the construction of comparatively complex objects.
 
 When the complexity of creating object increases, the Builder pattern can separate out the instantiation process by using another object (a builder) to construct the object.
@@ -174,9 +174,10 @@ BankAccount newAccount = new BankAccount
 ```
 
 **When to Use Builder Pattern**
-When the process involved in creating an object is extremely complex, with lots of mandatory and optional parameters
-When an increase in the number of constructor parameters leads to a large list of constructors
-When client expects different representations for the object that's constructed
+
+- When the process involved in creating an object is extremely complex, with lots of mandatory and optional parameters
+- When an increase in the number of constructor parameters leads to a large list of constructors
+- When client expects different representations for the object that's constructed
 
 _Reference_
 https://www.baeldung.com/creational-design-patterns

@@ -1,3 +1,4 @@
+**JAVA 8 FEATURES**
 Java 8 was released in early 2014. This tutorial list down important Java 8 features with examples such as lambda expressions, Java streams, functional interfaces, default methods and date-time API changes.
 
 **1. Lambda Expressions**  
@@ -36,7 +37,7 @@ If the body of lambda expression has a single statement, curly brackets are not 
 **2. Functional Interfaces**
 Functional interfaces are also called Single Abstract Method interfaces (SAM Interfaces). As the name suggests, a functional interface permits exactly one abstract method in it.
 
-Java 8 introduces @FunctionalInterface annotation that we can use for giving compile-time errors if a functional interface violates the contracts.
+Java 8 introduces **_@FunctionalInterface_** annotation that we can use for giving compile-time errors if a functional interface violates the contracts.
 
 **_2.1. Functional Interface Example_**
 
