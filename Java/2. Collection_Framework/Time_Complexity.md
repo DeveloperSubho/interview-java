@@ -1,4 +1,5 @@
-T**Time Complexity**
+## Time Complexity
+
 Usually, when we talk about time complexity, we refer to Big-O notation. Simply put, the notation describes how the time to perform the algorithm grows with the input size.
 
 ![Java-collection-complexity](../../Screenshots/Java-collection-complexity.png)

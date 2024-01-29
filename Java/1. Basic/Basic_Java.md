@@ -109,7 +109,7 @@ The major difference between Heap and Stack memory are:
 |**_Lifetime_**|Exists until the end of execution of the thread.|Heap memory lives from the start till the end of application execution.|
 |**_Usage_**|Stack memory only contains local primitive and reference variables to objects in heap space.|Whenever an object is created, it’s always stored in the Heap space.|
 
-![Stack vs Heap](/Screenshots/stack-vs-heap-java.png)
+![Stack vs Heap](../../Screenshots/stack-vs-heap-java.png)
 
 **_14. What is a package in Java? List down various advantages of packages._**  
 Packages in Java, are the collection of related classes and interfaces which are bundled together. By using packages, developers can easily modularize the code and optimize its reuse. Also, the code within the packages can be imported by other classes and reused. Below I have listed down a few of its advantages:

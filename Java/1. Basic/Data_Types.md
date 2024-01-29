@@ -18,7 +18,7 @@ In Java language, primitive data types are the building blocks of data manipulat
 - float data type
 - double data type
 
-![Maven Life Cycle](/Screenshots/java-data-types.png)
+![Maven Life Cycle](../../Screenshots/java-data-types.png)
 
 _References:_
 https://www.javatpoint.com/java-data-types
