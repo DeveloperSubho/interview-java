@@ -16,7 +16,7 @@ The ArrayList in Java is backed by an array. This helps to understand the intern
 
 So let's focus first on the time complexity of the common operations at a high level:
 
-**_add()_** – takes O(1) ti me; however, worst-case scenario, when a new array has to be created and all the elements copied to it, it's O(n)
+**_add()_** – takes O(1) time; however, worst-case scenario, when a new array has to be created and all the elements copied to it, it's O(n)
 **_add(index, element)_** – on average runs in O(n) time
 **_get()_** – is always a constant time O(1) operation
 **_remove()_** – runs in linear O(n) time. We have to iterate the entire array to find the element qualifying for removal.
