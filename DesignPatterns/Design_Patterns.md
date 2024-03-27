@@ -244,7 +244,7 @@ The client object is one who sends a request to the Target object.
 - The new filter can be added at any time without affecting the client's code.
 - Filters can be selected dynamically during program execution.
 
-**29) Explain Data Access Object (DAO) pattern?**
+**29. Explain Data Access Object (DAO) pattern?**
 Data Access Object Pattern is used to isolate low-level data accessing API or actions from high-level business services. Following are the components in the DAO Pattern.
 **_Data Access Object Interface_**
 DAO interface describes the standard actions to be performed on a model object(s).
@@ -257,6 +257,13 @@ This object is a plain old java object containing get/set methods to store data 
 The difference between VO and JDO is that the JDO is a persistent technology that competes against entity beans. It allows to create POJO (plain old java objects) and persevere them to the database.
 
 While VO (value objects) represents an abstract design pattern, that is used in conjunction with entity beans, JDBC and JDO.
+
+**31. Behavioral design patterns**
+Behavioral design patterns are concerned with the interaction and responsibility of objects.
+
+In these design patterns, the interaction between the objects should be in such a way that they can easily talk to each other and still should be loosely coupled.
+
+That means the implementation and the client should be loosely coupled in order to avoid hard coding and dependencies.
 
 _Resource:_
 https://www.javatpoint.com/java-design-pattern-interview-questions
