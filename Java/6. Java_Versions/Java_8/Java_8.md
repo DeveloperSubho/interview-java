@@ -159,3 +159,9 @@ To interact with humans, we need to get bigger time durations presented with Per
 Period period = Period.ofDays(6);
 period = Period.ofMonths(6);
 period = Period.between(LocalDate.now(), LocalDate.now().plusDays(60));
+
+_References:_
+https://www.geeksforgeeks.org/java-8-features
+https://www.digitalocean.com/community/tutorials/java-8-features-with-examples
+https://www.geeksforgeeks.org/java-8-features/
+
