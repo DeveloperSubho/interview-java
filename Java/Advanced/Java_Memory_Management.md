@@ -1,0 +1,1 @@
+https://medium.com/@fullstacktips/java-memory-management-understanding-the-jvm-heap-method-area-stack-27c895fcce44
