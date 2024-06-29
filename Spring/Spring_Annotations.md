@@ -11,7 +11,7 @@ By using a specialized annotation we hit two birds with one stone. First, they a
 - @Controller is a stereotype for the presentation layer (spring-MVC).
   And here is the nice diagram to explain the hierarchy of all these annotations in Spring Framework:
 
-  ![Component Annotation](/Screenshots/Component_Annotation.png)
+  ![Component Annotation](../Screenshots/Component_Annotation.png)
 
 **2. What’s the difference between @Component, @Controller, @Repository & @Service annotations in Spring?**  
 @Component is used to indicate that a class is a component. These classes are used for auto-detection and configured as a bean when annotation-based configurations are used.
