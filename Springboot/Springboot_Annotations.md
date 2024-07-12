@@ -4,6 +4,15 @@
   @SpringBootApplication marks the main class of a Spring Boot application. This is used usually on a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning.
   The @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan with their default attributes.
   One of the most basic and helpful annotations, is @SpringBootApplication. It's syntactic sugar for combining other annotations that we'll look at in just a moment.
+  ```java
+  @SpringBootApplication
+  class VehicleFactoryApplication {
+  
+      public static void main(String[] args) {
+          SpringApplication.run(VehicleFactoryApplication.class, args);
+      }
+  }
+  ```
 
 - @Configuration and @ComponentScan:  
   The @Configuration and @ComponentScan annotations that we described above make Spring create and configure the beans and components of your application. It's a great way to decouple the actual business logic code from wiring the app together.
@@ -12,6 +21,14 @@
   @EnableAutoConfiguration tells Spring Boot to look for auto-configuration beans on its classpath and automatically applies them. It tells Spring Boot to “guess” how you want to configure Spring based on the jar dependencies that you have added.
   Since spring-boot-starter-web dependency added to classpath leads to configure Tomcat and Spring MVC, the auto-configuration assumes that you are developing a web application and sets up Spring accordingly. This annotation is used with @Configuration.
   Now the @EnableAutoConfiguration annotation is even better. It makes Spring guess the configuration based on the JAR files available on the classpath. It can figure out what libraries you use and preconfigure their components without you lifting a finger. It is how all the spring-boot-starter libraries work. Meaning it's a major lifesaver both when you're just starting to work with a library as well as when you know and trust the default config to be reasonable.
+  ```java
+  @Configuration
+  @EnableAutoConfiguration
+  class VehicleFactoryConfig {}
+  ```
+  ### Auto-Configuration Conditions
+  Usually, when we write our custom auto-configurations, we want Spring to use them conditionally. We can achieve this with the annotations in this section.
+  We can place the annotations in this section on @Configuration classes or @Bean methods.
 
 - @ConditionalOnClass and @ConditionalOnMissingClass:  
   The @ConditionalOnClass and @ConditionalOnMissingClass annotations let configuration be included based on the presence or absence of specific classes. With these annotations, Spring will only use the marked auto-configuration bean if the class in the annotation’s argument is present/absent.

@@ -1,0 +1,1 @@
+https://www.javamadesoeasy.com/2015/10/java-8-mcq-multiple-choice-questions.html

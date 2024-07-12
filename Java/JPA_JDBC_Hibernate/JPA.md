@@ -13,11 +13,10 @@ In order to define the composite primary keys, we should follow some rules:
 Let’s say we have a table called Account and it has two columns, accountNumber and accountType, that form the composite key. Now we have to map it in JPA.
 
 As per the JPA specification, let’s create an AccountId class with these primary key fields:
-
-public class AccountId implements Serializable {
-private String accountNumber;
 ```java
-private String accountType;
+public class AccountId implements Serializable {
+    private String accountNumber;
+    private String accountType;
 
     // default constructor
 
@@ -37,8 +36,8 @@ In order to do that, we need to annotate the entity with the @IdClass annotation
 @Entity
 @IdClass(AccountId.class)
 public class Account {
-@Id
-private String accountNumber;
+    @Id
+    private String accountNumber;
 
     @Id
     private String accountType;
